@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: coding-task
+  name: coding-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coding-task
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: coding-task
+    spec:
+      containers:
+      - image: babli27/gradlecoding-task
+        name: coding-task
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: coding-task
+  name: coding-task
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: coding-task
+  type: ClusterIP
+status:
+  loadBalancer: {}
