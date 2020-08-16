@@ -30,3 +30,6 @@ Steps to run the application in Kubernetes
 7. To connect to the application, which you have exposed as a Service in Kubernetes 
 
    kubectl port-forward svc/coding-task 8080:8080 
+   
+   
+   Note:Use useraccount  of docker hub instead of babli27
